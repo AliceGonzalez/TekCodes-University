@@ -1,0 +1,185 @@
+/* General styles for the department cards grid */
+.dd-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between the cards */
+    margin: 20px 0;
+}
+
+.dd-single {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px; /* Creates a 3D effect */
+}
+
+.dd-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.dd-card:hover {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+/* Front side of the card - Department name */
+.dd-card .dd-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0073e6;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.6s;
+}
+
+.dd-card .dd-front h2 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Back side of the card - Department details */
+.dd-card .dd-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: rotateY(180deg);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Styles for the department details inside the back side */
+.dd-back p {
+    margin: 10px 0;
+}
+
+.dd-back a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.dd-back a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 1200px) {
+    .dd-wrapper {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .dd-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dd-wrapper {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+/* Ensuring department details are styled correctly for the single department view */
+.department-details .dd-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.department-details .dd-single {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 800px;
+}
+
+.department-details .dd-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.department-details .odd-content {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.department-details .dd-details {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.department-details .dd-details p {
+    margin-bottom: 10px;
+}
+
+.department-details .dd-details a {
+    color: #0073aa;
+}
+
+.department-details .dd-details a:hover {
+    color: #005177;
+}
+
+.dd-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between the cards */
+    margin: 20px 0;
+}
+
+.dd-card {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px; /* Creates a 3D effect */
+}
+
+.dd-card:hover {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .dd-wrapper {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .dd-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dd-wrapper {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
